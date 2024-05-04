@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Workout</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        h1 {
+            text-align: center;
+            margin-right: 10px;
+            padding: 10px;
+            color: yellow;
+        }
+
+        .feed {
+            width: 900px;
+            background-color: rgb(63, 62, 62);
+            height: 100px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        p {
+            color: white;
+        }
+
+        .form-control {
+            font-size: 30px;
+            width: 400px;
+            height: 70px;
+            box-sizing: border-box;
+            margin-left: 50px;
+            padding: 20px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+<header id="topheader" style="border: 2px solid black; ">
+    <a id="headertext" href="link.com">MindSweat</a></p>
+    <div class="navhead">
+        <a href="#" class="menuItem" onclick="goToPage('index.html')">HOME</a>
+        <a href="#" class="menuItem" onclick="goToPage('port.html')">DASHBOARD</a>
+        <a href="#" class="menuItem" onclick="goToPage('signup.html')">LOGIN/SIGN UP</a>
+        <a href="#" class="menuItem" onclick="goToPage('shop.html')">SHOP</a>
+    </div>
+</header>
+
+<h1 style="text-align: centers;">Feedbacks</h1>
+
+<div style="display: flex; flex-direction: column; align-items: center;">
+
+    <form id="feedbackForm" style="margin-bottom: 20px;">
+        <input class="form-control" type="text" id="feedbackInput" placeholder="Give Your Feedback">
+        <button style="background-color: yellow; color: black; border-radius: 10px; padding: 5px;"  type="button" onclick="submitFeedback()">Submit</button>
+    </form>
+
+    <div id="feedbackContainer">
+        <div class="feed">
+            <p>
+                MindSweat Fitness is a game-changer! With its diverse workout options and convenient accessibility,
+                it's transformed my fitness journey. The instructors are top-notch, and the emphasis on holistic wellness is refreshing. I've seen remarkable improvements in my strength and endurance since joining. Highly recommend!
+            </p>
+        </div>  
+        <div class="feed">
+            <p>
+                MindSweat Fitness is a game-changer! With its diverse workout options and convenient accessibility,
+                it's transformed my fitness journey. The instructors are top-notch, and the emphasis on holistic wellness is refreshing. I've seen remarkable improvements in my strength and endurance since joining. Highly recommend!
+            </p>
+        </div>
+    </div>
+</div>
+<script>
+    function submitFeedback() {
+        var feedbackInput = document.getElementById('feedbackInput').value;
+        var feedbackContainer = document.getElementById('feedbackContainer');
+        var newDiv = document.createElement('div');
+        newDiv.className = 'feed';
+        newDiv.innerHTML = '<p>' + feedbackInput + '</p>';
+        feedbackContainer.appendChild(newDiv);
+        document.getElementById('feedbackInput').value = ''; 
+    }
+</script>
+</body>
+</html>
